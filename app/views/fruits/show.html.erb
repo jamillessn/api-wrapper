@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @fruit %>
+
+<div>
+  <%= link_to "Edit this fruit", edit_fruit_path(@fruit) %> |
+  <%= link_to "Back to fruits", fruits_path %>
+
+  <%= button_to "Destroy this fruit", @fruit, method: :delete %>
+</div>

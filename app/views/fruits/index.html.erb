@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Fruits</h1>
+
+<div id="fruits">
+  <% @fruits.each do |fruit| %>
+    <%= render fruit %>
+    <p>
+      <%= link_to "Show this fruit", fruit %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New fruit", new_fruit_path %>
