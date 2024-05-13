@@ -5,7 +5,10 @@
   <ul>
     <% @fruits.each do |fruit| %>
       <li>
-        <%= fruit['name'] %>
+        <h2 class="hover:bg-blue-400 max-w-[90%] truncate rounded-md px-2">
+          <%= link_to fruit['name'], fruit_info_path(fruit['name']) %> 
+        </h2>
+        
       </li>
     <% end %>
   </ul>

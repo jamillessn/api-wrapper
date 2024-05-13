@@ -23,7 +23,7 @@ class Fruityvice::V1::Client
  def getFruit(name)
     request(
         method: "get",
-        endpoint: "/fruit/#{name}",
+        endpoint: "fruit/#{name}",
     )
  end
 
@@ -34,6 +34,13 @@ class Fruityvice::V1::Client
     )
  end
     
+ def getFruitImg(name)
+    request(
+        method: "get",
+        endpoint: "/fruit/#{name}/image",
+    )
+ end
+ 
  private
 
     def request(method:, endpoint:, params: {})

@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @fruit %>
+<% if @fruit %>
+<div> <%= @fruit_img %> </div>
+  <h1><%= @fruit['name'] %></h1>
+  
+  <span>Family: <%= @fruit['family'] %></span> |
+  <span>Order: <%= @fruit['order'] %></span> |
+  <span>Genus: <%= @fruit['genus'] %></span>
+  <h2>Nutrients:</h2>
+  <ul>
+    <li>Calories: <%= @fruit['nutritions']['calories'] %></li>
+    <li>Sugar: <%= @fruit['nutritions']['sugar'] %></li>
+    <li>Fat: <%= @fruit['nutritions']['fat'] %></li>
+    <li>Carbohydrates: <%= @fruit['nutritions']['carbohydrates'] %></li>
+    <li>Protein: <%= @fruit['nutritions']['protein'] %></li>
+    </ul>
+  <!-- Add more fields as necessary based on the data structure -->
+<% else %>
+  <p>Fruit not found!</p>
+<% end %>
 
 <div>
-  <%= link_to "Edit this fruit", edit_fruit_path(@fruit) %> |
   <%= link_to "Back to fruits", fruits_path %>
-
-  <%= button_to "Destroy this fruit", @fruit, method: :delete %>
 </div>
