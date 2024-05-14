@@ -1,5 +1,5 @@
 class FruitsController < ApplicationController
-  before_action :client, only: [:index, :show]
+  before_action :client, only: [:index, :show, :all_data]
 
   def index
     @fruits = client.getFruits
@@ -8,15 +8,16 @@ class FruitsController < ApplicationController
   def show
     name = params[:id]
     @fruit = client.getFruit(name)
-    @fruit_img = client.getFruitImg(name)
-    puts "@fruit: #{@fruit}"  # Debug output
-    
+  end
+
+  def all_data
+    res = client.getFruits
+    render json: res
   end
 
   private
 
-    def client
-     Fruityvice::V1::Client.new
-    end
-
+  def client
+    Fruityvice::V1::Client.new
+  end
 end

@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+h1 {
+  margin-bottom: 1rem; /* mb-4 */
+  font-size: 2.25rem; /* text-4xl, adjusts with breakpoints */
+  font-weight: 800; /* font-extrabold */
+  line-height: 1; /* leading-none */
+  letter-spacing: -0.05em; /* tracking-tight */
+  color: #1f2937; /* text-gray-900, default color */
+}
+.logo {
+  justify-content: center;
+  
+}
+.logo img {
+  max-width: 7%;
+  padding-left: 2em;
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.fruit-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+

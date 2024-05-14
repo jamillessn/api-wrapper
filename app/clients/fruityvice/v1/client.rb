@@ -27,20 +27,6 @@ class Fruityvice::V1::Client
     )
  end
 
- def getFruitFunFact(name)
-    request(
-        method: "get",
-        endpoint: "/fruit/#{name}/fun-facts",
-    )
- end
-    
- def getFruitImg(name)
-    request(
-        method: "get",
-        endpoint: "/fruit/#{name}/image",
-    )
- end
- 
  private
 
     def request(method:, endpoint:, params: {})
